@@ -20,3 +20,16 @@ body{
 	display: block;
 	padding-top: 10px;
 }
+
+#name{
+	font-size: 4.5em;
+	text-align: center;
+}
+
+.options{
+	float: right;
+	margin: 0 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 100px;
+}

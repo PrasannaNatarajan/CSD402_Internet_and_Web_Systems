@@ -5,7 +5,18 @@ body{
 	margin: 0 0;
 	background: rgba(1,1,1,0.5);
 	width: 33vw;
-	left: 0px;
-	padding: 0px;
 	height: 100%;
+	float: left;
+
+}
+.right_panel{
+	margin: 0 0;
+	background: #666;
+	height: 100%;
+}
+#avatar{
+	border-radius: 100px;
+	margin: 0 auto;
+	display: block;
+	padding-top: 10px;
 }

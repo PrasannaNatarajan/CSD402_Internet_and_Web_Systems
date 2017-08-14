@@ -1,6 +1,5 @@
 body{
-	margin:0 0;
-	width: 100%;
+	margin: auto 10%;
 	overflow: scroll;
 }
 
@@ -15,6 +14,12 @@ body{
 	grid-column-start:1;
 	grid-column-end:3;
 	text-align: center;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	border-top: 10px solid #aeaeae;
+	border-bottom: 10px solid #aeaeae;
+	border-radius: 5px;
+	background-color: #aeaeae;
 }
 
 .campaign{
@@ -22,6 +27,8 @@ body{
 	grid-column-end:3;
 	background-color: #aeaeae;
 	padding:5%;
+	margin: auto 5%;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 .main_content{
 	grid-column-start:1;
@@ -71,7 +78,10 @@ body{
 .inside_header{
 	background-color: #a584ad;
 	text-align: center;
-	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.inside_article{
+	padding:5px;
 }
 @media(max-width: 480px){
 	.main_content{

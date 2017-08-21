@@ -1,6 +1,8 @@
 body{
-	margin: auto 10%;
 	overflow: scroll;
+}
+.grid_body{
+	margin: auto 10%;
 }
 
 .main{
@@ -28,6 +30,7 @@ body{
 	background-color: #aeaeae;
 	padding:5%;
 	margin: auto 5%;
+	margin-top: 0px;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 .main_content{
@@ -38,7 +41,7 @@ body{
 .inside_header_content{
 	display: grid;
 	grid-template-columns:1fr 1fr 1fr;
-	margin: 5% auto;
+	margin: 2% auto;
 }
 
 .first_content{
@@ -60,29 +63,51 @@ body{
 }
 
 .article_content{
-	height: 100px;
+	height: 250px;
 	margin: 5px;
+	border-radius: 5px;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 	overflow:hidden;
-	text-overflow: clip;
+	text-overflow: ellipsis;
+	border: 2px solid #aeaeae;
 }
 
 .inside_campaign{
 	text-overflow: ellipsis;
 }
 
+hr{
+	margin: 0px 0px;
+}
+
 .article_header{
 	text-align: center;
+	background-color: #aeaeae;
 }
 
 .inside_header{
 	background-color: #a584ad;
 	text-align: center;
+	border-bottom: 5px solid #a584ad;
+    border-top: 5px solid #a584ad;
 }
 
 .inside_article{
 	padding:5px;
 }
+
+.image{
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+}
+
+.footer{
+	background-color: #aeaeae;
+	margin: 0px 0px;
+
+}
+
 @media(max-width: 480px){
 	.main_content{
 		grid-column-start:1;

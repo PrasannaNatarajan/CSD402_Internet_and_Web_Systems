@@ -1,0 +1,15 @@
+.main_content{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.form_left{
+	grid-column-start:1;
+	grid-column-end:2;
+	float: left;
+}
+
+.get_inputs{
+	grid-column-start:2;
+	grid-column-end:3;
+}

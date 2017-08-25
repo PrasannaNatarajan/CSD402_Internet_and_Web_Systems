@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/main.js"></script>
+	<title>Javascript</title>
+</head>
+<body onload="resize_canvas()" >
+	<header><h1> Select a Shape</h1></header> <br>
+	<div class="main_content">
+		<section class="form_left">
+			<form >
+			  <input onclick="draw_shape()" id = "circle" type="radio" name="shape" value="circle" checked> Circle <br>
+			  <input onclick="draw_shape()" id = "rectangle" type="radio" name="shape" value="rectangle"> Rectangle <br>  
+			  <input onclick="draw_shape()" id = "square" type="radio" name="shape" value="square"> Square<br>
+			  <input onclick="draw_shape()" id = "triangle" type="radio" name="shape" value="triangle"> Triangle <br>  
+			  <input onclick="draw_shape()" id = "hexagon" type="radio" name="shape" value="hexagon"> Hexagon <br>  
+			</form> 
+		</section>
+		
+		<div class="get_inputs" id="get_inputs">
+
+
+		</div>
+	</div>
+	<canvas id="myCanvas" style=" ">
+
+	</canvas>
+</body>
+</html>

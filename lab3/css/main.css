@@ -1,39 +1,127 @@
 body{
-	margin: auto auto;
+	margin: 0;
 }
 
 .main{
 	display: grid;
 	width: 100%;
-	grid-template-columns:1fr 3fr 1fr;
+	grid-template-columns:1fr 4fr;
 }
 
-.header_list{
-	width: 100%;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
+.sidenav{
+	grid-column-start:1;
+	grid-column-end:2;
+	background-color: #151515;
+	height: 700px;
 	overflow: hidden;
-	background-color: #333;
-	position: sticky;
-	top: 0;
-	width: 100%;
+	display: grid;
+	grid-template-rows:1.5fr 3fr;
 }
 
-
-li{
-	float: left;
+.topnav {
+  overflow: hidden;
+  background-color: #ad0404;
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
 }
 
-li a{
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.search_input {
+    width: 98%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 40px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('https://www.w3schools.com/howto/searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.links{
+
+}
+.quora_image{
 	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
+    width: 51%;
+    /* text-align: center; */
+    /* align-items: normal; */
+    /* vertical-align: bottom; */
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.search_input_form{
+	padding-top:2px;
+	padding-bottom: 2px;
+}
+#avatar{
+	border-radius: 100px;
+	margin: 0 auto;
+	display: block;
+	padding-top: 10px;
 }
 
-li a:hover {
-	background-color: #111;
+
+.sidenav a {
+  display: block;
+  color: #090909;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
-	
+
+.sidenav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.sidenav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+.content_space{
+	grid-column-start:2;
+	grid-column-end:6;
+
+	display: grid;
+	grid-template-rows:2fr 2fr;
+}
+
+.second_section{
+	display: grid;
+	grid-template-columns:2fr 2fr 2fr;
+}
+
+.first_section{
+	display: grid;
+	grid-template-columns:3fr 3fr;
+}
+
+.article{
+	margin: 10px 10px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}

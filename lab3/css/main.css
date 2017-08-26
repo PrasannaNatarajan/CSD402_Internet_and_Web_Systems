@@ -15,6 +15,10 @@ body{
 	height: 700px;
 	overflow: hidden;
 	display: grid;
+	position: fixed;
+	top:50px;
+	width: 20%;
+	height: 100%;
 	grid-template-rows:1.5fr 3fr;
 }
 
@@ -22,6 +26,8 @@ body{
   overflow: hidden;
   background-color: #ad0404;
   display: grid;
+  position: fixed;
+  width: 100%;
   grid-template-columns: 1fr 2fr 2fr;
 }
 
@@ -41,7 +47,7 @@ body{
 }
 
 .topnav a.active {
-    background-color: #4CAF50;
+    background-color: #151515;
     color: white;
 }
 
@@ -87,7 +93,7 @@ body{
 
 .sidenav a {
   display: block;
-  color: #090909;
+  color: #ffffff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -100,13 +106,13 @@ body{
 }
 
 .sidenav a.active {
-    background-color: #4CAF50;
+    background-color: #ad0404;
     color: white;
 }
 .content_space{
 	grid-column-start:2;
 	grid-column-end:6;
-
+	margin-top: 5%;
 	display: grid;
 	grid-template-rows:2fr 2fr;
 }
@@ -122,6 +128,28 @@ body{
 }
 
 .article{
+	display: block;
 	margin: 10px 10px;
+	overflow: hidden;
+	padding: 10px;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.question{
+	font-weight: bold;
+	font-size: 33px;
+}
+
+.answer{
+
+}
+
+.upvotes{
+	font-size: 15px;
+	float: left;
+}
+
+.answer_buttons{
+	float: right;
+	margin: 10px 10px;
 }

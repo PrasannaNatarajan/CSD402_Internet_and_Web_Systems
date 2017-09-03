@@ -2,24 +2,29 @@ body{
 	margin: 0;
 }
 
+p{
+	/*font-family: 'q_serif',Georgia,Times,"Times New Roman",serif;*/
+}
+
 .main{
 	display: grid;
 	width: 100%;
-	grid-template-columns:1fr 4fr;
+	grid-template-columns:1fr 5fr;
 }
 
+
 .sidenav{
-	grid-column-start:1;
-	grid-column-end:2;
-	background-color: #151515;
-	height: 700px;
-	overflow: hidden;
-	display: grid;
-	position: fixed;
-	top:50px;
-	width: 20%;
-	height: 100%;
-	grid-template-rows:1.5fr 3fr;
+	    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: #151515;
+    height: 700px;
+    overflow: hidden;
+    display: grid;
+    position: fixed;
+    top: 50px;
+    width: 16.6666666666666666666%;
+    height: 100%;
+    grid-template-rows: 1.5fr 3fr;
 }
 
 .topnav {
@@ -29,6 +34,7 @@ body{
   position: fixed;
   width: 100%;
   grid-template-columns: 1fr 2fr 2fr;
+  z-index: 100;
 }
 
 .topnav a {
@@ -71,7 +77,8 @@ body{
 }
 .quora_image{
 	display: block;
-    width: 51%;
+	height: 2em;
+    /*width: 51%;*/
     /* text-align: center; */
     /* align-items: normal; */
     /* vertical-align: bottom; */
@@ -84,10 +91,11 @@ body{
 	padding-bottom: 2px;
 }
 #avatar{
-	border-radius: 100px;
-	margin: 0 auto;
+	border-radius: 20px;
+	/*margin: 0 auto;*/
 	display: block;
-	padding-top: 10px;
+	margin-top: 10px;
+	width: 50%;
 }
 
 
@@ -114,7 +122,7 @@ body{
 	grid-column-end:6;
 	margin-top: 5%;
 	display: grid;
-	grid-template-rows:2fr 2fr;
+	grid-template-rows:1fr auto;
 }
 
 .second_section{
@@ -133,11 +141,13 @@ body{
 	overflow: hidden;
 	padding: 10px;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
 }
 
 .question{
 	font-weight: bold;
 	font-size: 33px;
+	margin: 0 auto;
 }
 
 .answer{
@@ -152,4 +162,78 @@ body{
 .answer_buttons{
 	float: right;
 	margin: 10px 10px;
+}
+
+.first_part{
+	display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.bookmark{
+	margin-top: 0.7em;
+}
+
+.third_part{
+	/*display: grid;
+	grid-template-columns:2fr 3fr;*/
+}
+
+.user_images{
+	width: 15%;
+    border-radius: 200px;
+    float: left;
+}
+
+.inside_user_details{
+	margin: 0 0;
+	font-family: 'q_serif',Georgia,Times,"Times New Roman",serif;
+}
+
+.last_update{
+	font-size: 13px;
+    color: #999;
+}
+
+.comments{
+	/*display: grid;
+	grid-template-columns:1fr 5fr;*/
+}
+
+.comment_box{
+    width: 75%;
+    height: 32px;
+    border-radius: 100px;
+    /* background-image: url(images/myAvatar.png); */
+    padding-left: 2%;
+}
+
+.comment_picture{
+	    width: 8%;
+    float: left;
+    border-radius: 100px;
+}
+
+.name_details{
+	color: #fff;
+	text-align: center;
+}
+
+.sidenav_user .tooltiptext{
+	visibility: visible;
+	width: 120px;
+	color: #fff;
+
+	text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    margin:20% 45%;
+}
+
+hr{
+	border-bottom-width: 2px;
+	border-top-width: 0px;
 }

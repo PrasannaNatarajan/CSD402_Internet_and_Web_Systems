@@ -68,8 +68,8 @@ function draw_shape(argument) {
 		ctx.stroke();
 		ctx.fillStyle = '#8ED6FF';
 	  	ctx.fill();
-	 	get_inputs.innerHTML = '<label> Length: </label> <input type="text" id="rect_len"> <br> <label> Width: </label> <input type = "text" id = "rect_wid">'+
-	 	'<br> <input type="button" value = "calculate" onClick="calc_rectangle()"> <br><p id="rect_area">_______</p>';
+	 	get_inputs.innerHTML = '<table> <tr> <td> <label> Length: </label> </td> <td><input type="text" id="rect_len"> </td> </tr> <tr> <td><label>Width: </label> </td> <td><input type = "text" id = "rect_wid">'+
+	 	'</td> </tr> <tr> <td colspan="2"> <input type="button" style="width:100%;" value = "calculate" onClick="calc_rectangle()"> </td></tr> </table><br><p id="rect_area">_______</p>';
 		 	
 	} 
 
@@ -117,7 +117,7 @@ function calc_circle(){
 
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
-	var radius = document.getElementById("circle_radius").value;
+	var radius = parseFloat(document.getElementById("circle_radius").value);
 	var area = 3.14 * radius *radius;
 	var circumference = 2 * 3.14 * radius;
 
@@ -126,7 +126,7 @@ function calc_circle(){
 	var r = radius;
 	ctx.clearRect(0, 0, c.width, c.height);
 	ctx.beginPath();
-	ctx.arc(95,50,r,0,2*Math.PI);
+	ctx.arc(radius+100,radius+100,r,0,2*Math.PI);
 	ctx.stroke();
 	ctx.fillStyle = '#8ED6FF';
   	ctx.fill();
@@ -137,15 +137,15 @@ function calc_rectangle(){
 
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
-	var len = document.getElementById("rect_len").value;
-	var wid = document.getElementById("rect_wid").value;
+	var len = parseFloat(document.getElementById("rect_len").value);
+	var wid = parseFloat(document.getElementById("rect_wid").value);
 	var area = len * wid;
 	var perimeter = (2 * len) + (2 * wid);
 	var put = document.getElementById("rect_area");
 	put.innerHTML = '<label> Area: </label>'+area +'<br>' + '<label>Perimeter:</label>'+perimeter;
 	ctx.clearRect(0, 0, c.width, c.height);
 	ctx.beginPath();
-	ctx.rect(150,150,len,wid);
+	ctx.rect(10,10,len,wid);
 	ctx.stroke();
 	ctx.fillStyle = '#8ED6FF';
 	ctx.fill();
@@ -155,15 +155,21 @@ function calc_rectangle(){
 function calc_triangle(){
 	var c = document.getElementById("myCanvas");
 	var ctx = c.getContext("2d");
-	var s1 = document.getElementById("tri_s1").value;
-	var s2 = document.getElementById("tri_s2").value;
-	var s3 = document.getElementById("tri_s3").value;
-	var s = (s1+s2+s3 )/2
-	var area = Math.sqrt(s*(s-s1)*(s-s2)*(s-s3)); 
-	var perimeter = 2 *s;
-	var put = document.getElementById("tri_area");
-	put.innerHTML = '<label> Area: </label>'+area +'<br>' + '<label>Perimeter:</label>'+perimeter;
-}
+	var s1 = parseFloat(document.getElementById("tri_s1").value);
+	var s2 = parseFloat(document.getElementById("tri_s2").value);
+	var s3 = parseFloat(document.getElementById("tri_s3").value);
+	if(s1+s2 > s3 && s2+s3 > s1 && s1+s3 > s2){
+		var s = (s1+s2+s3 )/2
+		var area = Math.sqrt(s*(s-s1)*(s-s2)*(s-s3)); 
+		var perimeter = 2 *s;
+		var put = document.getElementById("tri_area");
+		put.innerHTML = '<label> Area: </label>'+area +'<br>' + '<label>Perimeter:</label>'+perimeter;
+	}
+	else{
+		var put = document.getElementById("tri_area");
+		put.innerHTML = '<label> Triangle not possible </label>'; 
+	}
+}	
 
 function calc_hexagon(){
 	var c = document.getElementById("myCanvas");

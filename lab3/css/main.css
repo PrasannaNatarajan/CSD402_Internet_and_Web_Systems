@@ -163,6 +163,10 @@ p{
 	float: right;
 	margin: 10px 10px;
 }
+.lower_answer_buttons{
+	float: right;
+	margin: 0px 0px;
+}
 
 .first_part{
 	display: grid;

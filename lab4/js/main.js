@@ -58,8 +58,8 @@ function draw_shape(argument) {
 	ctx.stroke();
 	ctx.fillStyle = '#8ED6FF';
   	ctx.fill();
-  	get_inputs.innerHTML = '<label> Length of side 1: </label> <input type="text" id="tri_s1"> <br> <label>Length of side 2: </label> <input type = "text" id = "tri_s2">'+'<br> <label>Length of side 3:  </label> <input type = "text" id = "tri_s3">'+
-	 	'<br> <input type="button" value = "calculate" onClick="calc_triangle()"> <br><p id="tri_area">_______</p>';
+  	get_inputs.innerHTML = '<table><tr> <td><label> Length of side 1: </label></td> <td><input type="text" id="tri_s1"></td> <tr> <td><label>Length of side 2: </label> </td> <td><input type = "text" id = "tri_s2"></td></tr>'+'<tr> <td><label>Length of side 3:  </label></td> <td><input type = "text" id = "tri_s3"></td></tr>'+
+	 	'<tr> <td colspan="2"><input type="button" value = "calculate" style="width:100%;" onClick="calc_triangle()"></td></tr> </table><br><p id="tri_area">_______</p>';
 	} 
 
 	else if(shape ==="rectangle"){

@@ -19,7 +19,7 @@
 
 - [x] Basic understanding of the working of Internet / DNS / Web services / APIs / domains / hosting etc.
 - [ ] Web service architectures: SOAP vs REST.
-- [ ] Front end design / Client & Server side scripting (Raw html,css,js, AJAX, jquery, bootstrap, angularjs, php, nodejs)
+- [x] Front end design / Client & Server side scripting (Raw html,css,js, AJAX, jquery, bootstrap, angularjs, php, nodejs)
 - [ ] Database servers
 - [ ] Session/Cookie/LocalStorage management
 - [ ] Web data-exchange formats (json, xml)

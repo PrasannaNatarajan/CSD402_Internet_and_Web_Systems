@@ -17,7 +17,7 @@
 
 ## Learning objectives:
 
-- [ ] Basic understanding of the working of Internet / DNS / Web services / APIs / domains / hosting etc.
+- [x] Basic understanding of the working of Internet / DNS / Web services / APIs / domains / hosting etc.
 - [ ] Web service architectures: SOAP vs REST.
 - [ ] Front end design / Client & Server side scripting (Raw html,css,js, AJAX, jquery, bootstrap, angularjs, php, nodejs)
 - [ ] Database servers

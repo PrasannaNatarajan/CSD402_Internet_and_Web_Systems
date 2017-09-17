@@ -1,0 +1,43 @@
+.img_car{
+  width: 100%;
+  height: 10%;
+}
+
+.cat_container{
+  margin: 2% 10px;
+}
+
+#carouselExampleIndicators{
+  margin:0 0px;
+}
+
+.card_custom{
+  width: 17.5rem; 
+  margin-top: 10px;
+}
+
+.img_custom{
+  width: 250px;
+}
+
+.addToCart{
+  float: left;
+}
+
+
+.qtyInput{
+  float: right;
+  width: 25%;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .card_custom{
+      width: 15rem;
+    }
+    .img_cutom{
+      width: 100px;
+    }
+    .cat_container{
+      margin: 0px 0px;
+    }
+}

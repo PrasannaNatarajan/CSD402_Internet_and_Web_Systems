@@ -246,6 +246,7 @@ var amount = 0;
 var qty = {};
 
 $(document).ready(function(){
+  fillBooks();
   $('[data-toggle="popover"]').popover();
   $('.addToCart').click( function(e) {
     e.preventDefault();

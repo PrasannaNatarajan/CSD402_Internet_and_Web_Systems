@@ -343,12 +343,12 @@ $("#newInp").remove();
   var book_contents = {
     "bookid": curr_book_id_counter,
     "category": val,
-    "title": "Mein Kampf",  
-    "author": "Adolf Hitler",
-    "type": "Paperback",
+    "title": "Title",  
+    "author": "Author",
+    "type": "Type",
     "rating": "4",
-    "price": "350",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/51V6yCqpANL._AC_US327_QL65_.jpg"
+    "price": "Price",
+    "image": "https://vignette.wikia.nocookie.net/harrypotter/images/8/86/250px-Hogwarts_coa.jpg/revision/latest?cb=20090416042817"
   };
   books.push(book_contents);   
      console.log("oye"+curr_book_id_counter);
@@ -372,11 +372,11 @@ function addNewBook(i,val){
             <div class="card card_custom">
               <img class="card-img-top img_custom" src="`+books[i].image+`">
               <div class="card-block">
-                <input type="text" class="card-title" id="newBookTitle`+i+`" value="`+books[i].title+`">
-                <input id = "newAuthor`+i+`" type="text" value="`+books[i].author+`">
-                <br><input id="newType`+i+`" type="text" value="`+books[i].type+`">
-                             
-                  <button id="idAddNewBookDetails`+i+`" onclick="addNewBookDetails(`+i+`);">Submit</button>
+                <input type="text" class="new_card-title" id="newBookTitle`+i+`" value="`+books[i].title+`">
+                <input id = "newAuthor`+i+`" type="text" value="`+books[i].author+`" class="new_card-title">
+                <br><input id="newType`+i+`" type="text" value="`+books[i].type+`" class="new_card-title"> <br>
+                <input id="newPrice`+i+`" type="text" value="`+books[i].price+`" class="new_card-title"><br>
+                  <button id="idAddNewBookDetails`+i+`" onclick="addNewBookDetails(`+i+`);" class="new_card-title">Submit</button>
                   
                 
               </div>

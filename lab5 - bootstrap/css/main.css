@@ -45,6 +45,11 @@
   float: right;
   width: 21%;
 }
+
+.new_card-title{
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .card_custom{

@@ -134,7 +134,7 @@
 			<div class="row">
 				<div class="col">
 					<!-- Nav tabs -->
-					<ul class="nav nav-pills flex-column" role="tablist">
+					<ul class="nav nav-pills flex-column" role="tablist" id="list_genre">
 						<li class="nav-item">
 							<a class="nav-link active" data-toggle="tab" href="#ScienceFiction" role="tab">ScienceFiction</a>
 						</li>
@@ -150,11 +150,14 @@
 						<li class="nav-item">
 							<a class="nav-link" data-toggle="tab" href="#Romance" role="tab">Romance</a>
 						</li>
+						<li class="nav_item">
+							<a class="nav_link" data-toggle="tab" href = "#" onclick = "add_genre()" id = "add_button"role="tab"> Add new genre </a>
+						</li>
 					</ul>
 				</div>
 				<div class="col-9">
 					<!-- Tab panes -->
-					<div class="tab-content">
+					<div class="tab-content" id="content_of_tabs">
 						<div class="tab-pane active" id="ScienceFiction" role="tabpanel">
 
 							<div class="container">

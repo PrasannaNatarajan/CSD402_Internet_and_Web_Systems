@@ -204,7 +204,9 @@ var books =  [
 
 function fillBooks(){
   console.log("here");
+  for(i=0;i<books.length;i++){  $('#'+books[i].category+'>.container>.row').html("");}
 	for(i=0;i<books.length;i++){
+
 		bookCard = `
     <!--<div class="col"> </div>-->
 		<div class="col">
@@ -213,29 +215,24 @@ function fillBooks(){
               <div class="card-block">
                 <h4 class="card-title" id="book-title">`+books[i].title+`</h4>
                 <p class="card-text"><span id="book-author">`+books[i].author+`</span><br><span id="book-type">`+books[i].type+`</span><br><span id="book-rating" style="color:#218838">`+Array(parseInt(books[i].rating)).join('<i class="fa fa-star" aria-hidden="true"></i>')+`</span></p>
-                
-                  
+              
                   <a href="" class="btn btn-primary addToCart" id="book`+books[i].bookid+`" data-toggle="popover" data-trigger="hover" data-placement="right"  data-html="true" data-content="<strong>Price: `+books[i].price+`<br>GST: `+Math.round(books[i].price * 1.1)+`</strong>">Add to Cart <i class="fa fa-cart-plus"></i></a>
                   
-                  
-                  
                   <div class="form-group">
-                    <input type="text" class="form-control qtyInput" id="qty`+books[i].bookid+`" placeholder="QTY" value="1">
-                  </div>
-                  
-                
+                    <input type="button" value="+" class="form-control sym " id="plus`+books[i].bookid+`" onclick="inc_qty(this)">
+                    <input type="text" class="form-control qtyInput" id="qty`+books[i].bookid+`" placeholder="QTY" value="1"> 
+                    <input id="minus`+books[i].bookid+`" class="form-control sym" type="button" value="-" onclick="dec_qty(this)">
+                  </div>    
               </div>
             </div>
           </div>
 		`;
-    if(i%4 === 0){
-      // console.log($('#'+books[i].category+'>.container>.row').html());
+    if(notInclude.includes(i) == false){
       $('#'+books[i].category+'>.container>.row').html( $('#'+books[i].category+'>.container>.row').html()+bookCard );
+    }else{
+      addNewBook(i,books[i].category);
     }
-    else{
-        $('#'+books[i].category+'>.container>.row').html( $('#'+books[i].category+'>.container>.row').html()+bookCard );
-
-    }
+    
 	
 	}
 
@@ -244,9 +241,11 @@ function fillBooks(){
 var cart = [];
 var amount = 0;
 var qty = {};
+var notInclude = [];
 
 $(document).ready(function(){
   fillBooks();
+  curr_topic = $('.nav-link.active').text();
   $('[data-toggle="popover"]').popover();
   $('.addToCart').click( function(e) {
     e.preventDefault();
@@ -286,6 +285,21 @@ $(document).ready(function(){
   });
 });
 
+function inc_qty(e){
+  var bookid = ($(e).attr('id')).replace('plus','');
+  var curr_val = parseInt($('#qty'+bookid).val());
+  curr_val = curr_val + 1;
+  $('#qty'+bookid).val(curr_val);
+}
+
+function dec_qty(e){
+  var bookid = ($(e).attr('id')).replace('minus','');
+  var curr_val = parseInt($('#qty'+bookid).val());
+  curr_val = curr_val - 1;
+  if(curr_val >= 0)
+    $('#qty'+bookid).val(curr_val);
+}
+
 function getBookById(bookid) {
   return books.filter(
     function(book) {
@@ -293,4 +307,118 @@ function getBookById(bookid) {
         return book;
     }
   );
+}
+
+var counter_position = 5;
+var curr_topic;
+var curr_book_id_counter = 21;
+
+function add_genre(){
+  var inp = `<li class="nav-item">
+              <input class="nav" href="#newItem" role="tab" type="text" id="newInp">
+              <button onclick="getValue()">Submit</button>
+            </li>`;
+  $("#list_genre li:nth-child("+counter_position+")").after(inp);
+  
+}
+
+function getValue(){
+  var val = ($("#newInp").val());
+  curr_topic = $("#newInp").val();
+  console.log(curr_topic);
+var content = `<div class="tab-pane active" id="`+val+`" role="tabpanel">
+
+              <div class="container">
+                <div class="row">
+
+
+                </div>
+              </div>
+            </div>`;
+
+$("#content_of_tabs").append(content); 
+$("#newInp").remove();
+  $("#list_genre li").eq(counter_position).remove();
+
+  var book_contents = {
+    "bookid": curr_book_id_counter,
+    "category": val,
+    "title": "Mein Kampf",  
+    "author": "Adolf Hitler",
+    "type": "Paperback",
+    "rating": "4",
+    "price": "350",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/51V6yCqpANL._AC_US327_QL65_.jpg"
+  };
+  books.push(book_contents);   
+     console.log("oye"+curr_book_id_counter);
+  addNewBook(curr_book_id_counter-1,val);
+curr_book_id_counter = curr_book_id_counter+1;
+  var obj = `<li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#`+val+`" role="tab">`+val+`</a>
+            </li> `; 
+  
+  $("#list_genre li:nth-child("+counter_position+")").after(obj);
+  counter_position = counter_position+1;
+
+}
+
+function addNewBook(i,val){
+  notInclude.push(i);
+  curr_topic = $('.nav-link.active').text();
+  bookCard = `
+   
+    <div id="newCard`+i+`" class="col">
+            <div class="card card_custom">
+              <img class="card-img-top img_custom" src="`+books[i].image+`">
+              <div class="card-block">
+                <input type="text" class="card-title" id="newBookTitle`+i+`" value="`+books[i].title+`">
+                <input id = "newAuthor`+i+`" type="text" value="`+books[i].author+`">
+                <br><input id="newType`+i+`" type="text" value="`+books[i].type+`">
+                             
+                  <button id="idAddNewBookDetails`+i+`" onclick="addNewBookDetails(`+i+`);">Submit</button>
+                  
+                
+              </div>
+            </div>
+          </div>
+    `;
+
+    console.log("val last add new"+books[i].category);
+  $('#'+books[i].category+'>.container>.row').html( $('#'+books[i].category+'>.container>.row').html()+bookCard );
+    
+}
+
+function addNewBookDetails(i){
+  curr_topic = $('.nav-link.active').text();
+  temp = curr_topic;
+  var title = $("#newBookTitle"+i).val();
+  var author = $("#newAuthor"+i).val();
+  var type = $("#newType"+i).val();
+
+  $("#newType"+i).remove();
+  $("#newBookTitle"+i).remove();
+  $("#newAuthor"+i).remove();
+  $("#idAddNewBookDetails"+i).remove();
+  books[i].title=title;
+  books[i].author=author;
+  books[i].type=type;
+
+  $("#newCard"+i).remove();
+  notInclude.splice(notInclude.indexOf(i),1);
+  fillBooks();
+  
+  var book_contents = {
+    "bookid": i+1,
+    "category": temp,
+    "title": "Mein Kampf",  
+    "author": "Adolf Hitler",
+    "type": "Paperback",
+    "rating": "4",
+    "price": "350",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/51V6yCqpANL._AC_US327_QL65_.jpg"
+  };
+  books.push(book_contents);
+  addNewBook(i+1,temp);
+  curr_book_id_counter = curr_book_id_counter+1;
 }

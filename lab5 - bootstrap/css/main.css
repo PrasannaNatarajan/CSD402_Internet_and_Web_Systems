@@ -28,16 +28,22 @@
 }
 .img_custom{
   width: 250px;
+  padding-top: 10px;
+  margin-left: 15px;
 }
 
 .addToCart{
   float: left;
 }
 
-
+.sym{
+  display: inline-block;
+  width: 15%;
+  float: right;
+}
 .qtyInput{
   float: right;
-  width: 25%;
+  width: 21%;
 }
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */

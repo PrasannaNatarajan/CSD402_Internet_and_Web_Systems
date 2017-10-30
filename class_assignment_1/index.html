@@ -1,46 +1,56 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Class Assignment 1</title>
-</head>
-<link rel="stylesheet" type="text/css" href="css/main.css">
-<!-- Compiled and minified CSS -->
-  
+  <!DOCTYPE html>
+  <html>
+  <head>
+  	<title>Class Assignment 1</title>
+  </head>
+  <!-- Compiled and minified CSS -->
+
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css'>
-<body>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <body>
 
-<div class="container">
-	
-	 <!-- Dropdown Trigger -->
-    <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown1'>Drop Me!</a>
+    <div class="container">
+     <h1> Calendar</h1>
+     <!-- Dropdown Trigger -->
+     <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown1'>Drop Me!</a>
 
 
-  <!-- Dropdown Structure -->
-  <ul id='dropdown1' class='dropdown-content'>
-    <li><a href="#!">one</a></li>
-    <li><a href="#!">two</a></li>
-    <li><a href="#!">three</a></li>
-    <li><a href="#!">four</a></li>
-    <li><a href="#!">five</a></li>
+     <!-- Dropdown Structure -->
+     <ul id='dropdown1' class='dropdown-content'>
+      <li><a href="#!" id="user1">one</a></li>
+      <li><a href="#!" id="user2">two</a></li>
+      <li><a href="#!" id="user3">three</a></li>
+      <li><a href="#!" id="user4">four</a></li>
+      <li><a href="#!" id="user5">five</a></li>
 
-  </ul>
+    </ul>
 
-  <div class="row">
-  <div class="col">
-  		<h5> Sunday </h5>
-   </div>
-  <div class="col"> <h5> Monday </h5></div>
-  <div class="col"> <h5> Tuesday </h5></div>
-  <div class="col"> <h5> Wednesday </h5></div>
-  <div class="col"> <h5> Thrusday </h5></div>
-  <div class="col"> <h5> Friday </h5></div>
-  <div class="col"> <h5> Saturday </h5></div>
+    <div class="row">
+      <div class="col cal" id="sunday">
+        <div class="row header">
+            <h5> Sunday </h5>
+        </div>
+      </div>
+      <div class="col cal" id="monday"> 
+        <div class="row header"> 
+          <h5> Monday </h5> 
+        </div>
+      </div>
+      <div class="col cal" id="tuesday"> <div class="row header"><h5> Tuesday </h5> </div></div>
+      <div class="col cal" id="wednesday"> <div class="row header"><h5> Wednesday </h5></div></div>
+      <div class="col cal" id="thursday"> <div class="row header"><h5> Thrusday </h5></div></div>
+      <div class="col cal" id="friday"> <div class="row header"><h5> Friday </h5></div></div>
+      <div class="col cal" id="saturday"> <div class="row header"><h5> Saturday </h5></div></div>
+
+    </div>
+
+
 
   </div>
 
-</div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-          
-</body>
-</html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+   <script src='js/main.js'></script>
+
+  </body>
+  </html>

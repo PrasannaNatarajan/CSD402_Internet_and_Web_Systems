@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+
+	<script type="text/javascript">
+		function change(e1){
+			e1.value="changed";
+			console.log("here");
+		}
+
+		function change_by_id(){
+			document.getElementById('button1').value = "changed";
+			var arr = [5,4,3,4,5,1,5,4];
+			console.log(arr.pop());
+			console.log(arr.sort(function(a,b){return a-b;}));
+			console.log(arr.pop());
+			console.log(arr.toString());
+			var str = "prasanna";
+			console.log(str[0]);
+		}
+	</script>
+</head>
+<body>
+<input type="button" value="yeah" onclick="change(this);">
+<input type="button" id="button1" value="yeah" onclick="change_by_id();">
+</body>
+</html>

@@ -216,7 +216,7 @@ function fillBooks(){
                 <h4 class="card-title" id="book-title">`+books[i].title+`</h4>
                 <p class="card-text"><span id="book-author">`+books[i].author+`</span><br><span id="book-type">`+books[i].type+`</span><br><span id="book-rating" style="color:#218838">`+Array(parseInt(books[i].rating)).join('<i class="fa fa-star" aria-hidden="true"></i>')+`</span></p>
               
-                  <a href="" class="btn btn-primary addToCart" id="book`+books[i].bookid+`" data-toggle="popover" data-trigger="hover" data-placement="right"  data-html="true" data-content="<strong>Price: `+books[i].price+`<br>GST: `+Math.round(books[i].price * 1.1)+`</strong>">Add to Cart <i class="fa fa-cart-plus"></i></a>
+                  <a href="#" class="btn btn-primary addToCart" id="book`+books[i].bookid+`" onclick="return add_to_cart(this)" data-toggle="popover" data-trigger="hover" data-placement="right"  data-html="true" data-content="<strong>Price: `+books[i].price+`<br>GST: `+Math.round(books[i].price * 1.1)+`</strong>">Add to Cart <i class="fa fa-cart-plus"></i></a>
                   
                   <div class="form-group">
                     <input type="button" value="+" class="form-control sym " id="plus`+books[i].bookid+`" onclick="inc_qty(this)">
@@ -247,9 +247,10 @@ $(document).ready(function(){
   fillBooks();
   curr_topic = $('.nav-link.active').text();
   $('[data-toggle="popover"]').popover();
+
   $('.addToCart').click( function(e) {
     e.preventDefault();
-    
+    console.log("clicked add to cart");  
     // make add to cart button green and prevent more clicks
     $(this).removeClass('btn-primary').addClass('btn-success');
     this.innerHTML =  `Added to Cart <i class="fa fa-check"></i>`;
@@ -283,7 +284,47 @@ $(document).ready(function(){
 
     return false; 
   });
+  
 });
+
+function add_to_cart(e){
+  // t.preventDefault();
+  curr_topic = $('.nav-link.active').text();
+  $('[data-toggle="popover"]').popover();
+
+  console.log("inside add_to_cart()");
+  $(e).removeClass('btn-primary').addClass('btn-success');
+    e.innerHTML =  `Added to Cart <i class="fa fa-check"></i>`;
+    bookid = ($(e).attr('id')).replace('book','');
+    console.log(bookid)
+    console.log(parseInt($('#qty'+bookid).val()))
+
+    qty[bookid] = parseInt($('#qty'+bookid).val());
+    cart.push(bookid);
+    book = getBookById(bookid)[0];
+    amount = amount + qty[bookid]*parseInt(book.price);
+
+    obj = `<div class="row">
+              <div class="col">
+                <label>`+book.title+`</label>    
+              </div>
+              <div class="col">
+                <label>`+book.author+`</label>    
+              </div>
+              <div class="col">
+                <label>`+qty[bookid]+`</label>
+              </div>
+              <div class="col">
+                <label>&#8377; `+qty[bookid]*parseInt(book.price)+`</label>    
+              </div>
+            </div>`;
+
+         $('#books').prepend(obj);
+         $('#totalbill').html(amount);
+         $('#numBooks').html(cart.length);
+
+    return false;
+}
 
 function inc_qty(e){
   var bookid = ($(e).attr('id')).replace('plus','');
@@ -347,7 +388,7 @@ $("#newInp").remove();
     "author": "Author",
     "type": "Type",
     "rating": "4",
-    "price": "Price",
+    "price": "250",
     "image": "https://vignette.wikia.nocookie.net/harrypotter/images/8/86/250px-Hogwarts_coa.jpg/revision/latest?cb=20090416042817"
   };
   books.push(book_contents);   
@@ -395,6 +436,7 @@ function addNewBookDetails(i){
   var title = $("#newBookTitle"+i).val();
   var author = $("#newAuthor"+i).val();
   var type = $("#newType"+i).val();
+  var price = parseInt($("#newPrice"+i).val());
 
   $("#newType"+i).remove();
   $("#newBookTitle"+i).remove();
@@ -403,7 +445,7 @@ function addNewBookDetails(i){
   books[i].title=title;
   books[i].author=author;
   books[i].type=type;
-
+  books[i].price=price;
   $("#newCard"+i).remove();
   notInclude.splice(notInclude.indexOf(i),1);
   fillBooks();
@@ -411,12 +453,12 @@ function addNewBookDetails(i){
   var book_contents = {
     "bookid": i+1,
     "category": temp,
-    "title": "Mein Kampf",  
-    "author": "Adolf Hitler",
+    "title": "Title",  
+    "author": "Author",
     "type": "Paperback",
     "rating": "4",
-    "price": "350",
-    "image": "https://images-na.ssl-images-amazon.com/images/I/51V6yCqpANL._AC_US327_QL65_.jpg"
+    "price": "Price",
+    "image": "https://vignette.wikia.nocookie.net/harrypotter/images/8/86/250px-Hogwarts_coa.jpg/revision/latest?cb=20090416042817"
   };
   books.push(book_contents);
   addNewBook(i+1,temp);

@@ -1,0 +1,93 @@
+body{
+	margin: 0px;
+	border-left: 200px solid #eee;
+	border-right: 200px solid #eee;
+}
+.left_panel{
+	margin: 0 0;
+	background: #060606;
+	width: 25vw;
+	height: 200%;
+	float: left;
+
+}
+.right_panel{
+	margin: 0 0;
+	background: #b6b9b6;
+	height: 200%;
+}
+#avatar{
+	border-radius: 100px;
+	margin: 0 auto;
+	display: block;
+	padding-top: 10px;
+}
+
+#name{
+	font-size: 4.5em;
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+#projects{
+}
+
+#courses{
+}
+
+#interest{
+}
+
+.options{
+	text-align: right;
+	margin: 0 0;	
+	color: aliceblue;
+}
+
+#contact{
+	text-align: center;
+	margin: 0 0;
+}
+
+
+#links{
+	margin:0 0;
+	text-align: center;
+}
+
+.list{
+	padding-left:113%;
+	width: 150%;
+}
+
+.list_attr{
+	padding:10px;
+}
+
+#projects_list{
+	margin-top:0px;
+	padding-top: 5px;
+}
+
+#interests_list{
+	padding-top:0px;
+}
+
+.heading{
+	width:80%;
+	margin-right: 0px;
+	background-color: #b6b9b6;
+	height: 3px;
+	border: 0px;
+	margin-bottom: 0px;
+}
+
+.right_line{
+	border: 0px;
+    height: 3px;
+    background-color: #060606;
+    width: 80%;
+    margin-left: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
